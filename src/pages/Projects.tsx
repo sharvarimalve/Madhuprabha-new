@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Building2, ArrowRight, Download, Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -8,95 +9,156 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Sky Gardens Residences',
-      location: 'Bandra West, Mumbai',
-      price: '₹2.5 Cr onwards',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'ongoing',
-      type: 'residential',
-      completion: '2025',
-      description: 'Luxurious 3 & 4 BHK apartments with world-class amenities and stunning city views.',
-      features: ['Swimming Pool', 'Gym', 'Club House', 'Kids Play Area'],
+      title: '3BHK Luxurious Prajakta Park (Abhyankar Nagar)',
+      category: 'Residential',
+      image: '/images/Prajktapark.png',
+      location: 'Abhyankar Nagar, Nagpur',
+      duration: '12 months',
+      team: '20 members',
+      description: 'Introducing \'PRAJAKTA PARK\', our 5 level 3BHK luxurious park view apartment located in the lap of nature. A peaceful location in the heart of the city where you can enjoy your mornings with blissful greenery. A Perfect Home with Modern Amenities at Abhyankar Nagar, Nagpur.',
+      status: 'In Progress'
     },
     {
       id: 2,
-      title: 'Heritage Villas',
-      location: 'Juhu, Mumbai',
-      price: '₹8.5 Cr onwards',
-      image: 'https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'completed',
-      type: 'residential',
-      completion: 'Ready to Move',
-      description: 'Premium independent villas with private gardens and modern architecture.',
-      features: ['Private Garden', 'Basement Parking', 'Security', 'Premium Interiors'],
+      title: '3BHK Luxurious Prajakta La-Masion',
+      category: 'Residential',
+      image: '/images/secondProject.jpg',
+      location: 'Nagpur',
+      duration: '14 months',
+      team: '22 members',
+      description: 'Introducing \'PRAJAKTA La-Masion\', our 5 level 3BHK luxurious view apartment located in the lap of nature. A peaceful location in the heart of the city where you can enjoy your mornings with blissful greenery. A Perfect Home with Modern Amenities at Nagpur.',
+      status: 'In Progress'
     },
     {
       id: 3,
-      title: 'Marina Heights',
-      location: 'Worli, Mumbai',
-      price: '₹3.2 Cr onwards',
-      image: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'completed',
-      type: 'residential',
-      completion: '2023',
-      description: 'Luxury residential towers with panoramic sea views and premium amenities.',
-      features: ['Sea View', 'Infinity Pool', 'Spa', 'Concierge Service'],
+      title: 'Keshav Enclave nandanwan',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/keshav-enclave-nandanwan.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Introducing \'Keshav Enclave \', our 3 level 3BHK luxurious park view apartment located in the lap of nature. A peaceful location in the heart of the city where you can enjoy your mornings with blissful greenery. A Perfect Home with Modern Amenities at Abhyankar Nagar, Nagpur.',
+      status: 'Completed'
     },
     {
       id: 4,
-      title: 'Sunset Residency',
-      location: 'Powai, Mumbai',
-      price: '₹1.8 Cr onwards',
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'completed',
-      type: 'residential',
-      completion: '2023',
-      description: 'Affordable luxury homes with modern amenities and great connectivity.',
-      features: ['Metro Connectivity', 'Shopping Complex', 'School Nearby', 'Hospital Access'],
+      title: 'Prajakta cross Winds',
+      category: 'Residential',
+      image: '	https://ashishconstruction.in/wp-content/uploads/2021/08/PRAJAKTA-CROSSWIND-HINGANA-ROAD.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
     },
     {
       id: 5,
-      title: 'Royal Palms Apartments',
-      location: 'Andheri West, Mumbai',
-      price: '₹3.8 Cr onwards',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'ongoing',
-      type: 'residential',
-      completion: '2024',
-      description: 'Premium 2 & 3 BHK apartments with lush green surroundings and modern amenities.',
-      features: ['Garden View', 'Fitness Center', 'Children\'s Park', '24/7 Security'],
+      title: 'Prajakta Prabhakamal',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/08/IMG-20160212-WA0009.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
     },
     {
       id: 6,
-      title: 'Ocean View Towers',
-      location: 'Juhu Beach, Mumbai',
-      price: '₹5.2 Cr onwards',
-      image: 'https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'ongoing',
-      type: 'residential',
-      completion: '2025',
-      description: 'Luxury beachfront apartments with stunning ocean views and premium facilities.',
-      features: ['Ocean View', 'Private Beach Access', 'Spa & Wellness', 'Fine Dining'],
+      title: 'Prajakta Orchid',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/08/PRAJAKTA-ORCHID-PANDEY-LAYOUT.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
     },
+     {
+      id: 7,
+    title: 'Uttam Apartment',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/uttam-apartment-nandanwan.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
+    },
+     {
+      id: 8,
+     title: 'Ashish Annex',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/IMG_20210930_134037-1-min-scaled.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
+    },
+     {
+      id: 9,
+        title: 'Sai Bhushan',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/SAI-BHUSAN-SWALAMBI-NAGAR.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
+    },
+     {
+      id: 10,
+      title: 'DMA Harmony',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/DMA-HORMONEY-PUNE.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
+    },
+      {
+      id: 11,
+      title: 'Sai Vatika Layout',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/IMG_20210930_133751-min-rotated.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
+    },
+     {
+      id: 12,
+      title: 'Prajakta Gardens',
+      category: 'Residential',
+      image: '	https://ashishconstruction.in/wp-content/uploads/2021/10/IMG_20210930_133144-min-scaled.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
+    },
+    
   ];
 
   const filteredProjects = projects.filter(project => {
     if (filter === 'all') return true;
-    if (filter === 'ongoing') return project.status === 'ongoing';
-    if (filter === 'completed') return project.status === 'completed';
+    if (filter === 'In Progress') return project.status === 'In Progress';
+    if (filter === 'Completed') return project.status === 'Completed';
     return true;
   });
 
   const filterButtons = [
     { key: 'all', label: 'All Residential Projects' },
-    { key: 'ongoing', label: 'Ongoing' },
-    { key: 'completed', label: 'Completed' },
+    { key: 'In Progress', label: 'In Progress' },
+    { key: 'Completed', label: 'Completed' },
   ];
 
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+      <section className="py-20  text-gradient-to-r from-gray-800 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -107,7 +169,7 @@ const Projects = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Residential Projects</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our portfolio of exceptional residential developments across Mumbai
             </p>
           </motion.div>
@@ -115,7 +177,7 @@ const Projects = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-gradient-to-br from-amber-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="flex flex-wrap items-center justify-center gap-4"
@@ -124,8 +186,7 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center space-x-2 text-gray-600">
-              <Filter className="w-5 h-5" />
-              <span className="font-medium">Filter by:</span>
+             
             </div>
             {filterButtons.map((button) => (
               <motion.button
@@ -167,32 +228,18 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-64 object-fill group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      project.status === 'completed' 
+                      project.status === 'Completed' 
                         ? 'bg-green-500 text-white' 
                         : 'bg-amber-500 text-white'
                     }`}>
-                      {project.status === 'completed' ? 'Completed' : 'Ongoing'}
+                      {project.status === 'Completed' ? 'Completed' : 'In Progress'}
                     </span>
                   </div>
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      project.type === 'residential' 
-                        ? 'bg-blue-500 text-white' 
-                        : 'bg-purple-500 text-white'
-                    }`}>
-                      {project.type.charAt(0).toUpperCase() + project.type.slice(1)}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-4 right-4">
-                    <div className="flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
-                      <Calendar className="w-4 h-4" />
-                      <span>{project.completion}</span>
-                    </div>
-                  </div>
+                  
                 </div>
                 
                 <div className="p-6">
@@ -203,35 +250,19 @@ const Projects = () => {
                   </div>
                   <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
                   
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-800 mb-2">Key Features:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.features.slice(0, 3).map((feature, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-amber-100 text-amber-700 rounded-full text-xs">
-                          {feature}
-                        </span>
-                      ))}
-                      {project.features.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
-                          +{project.features.length - 3} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
                   
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-2xl font-bold text-amber-600">{project.price}</span>
-                  </div>
                   
                   <div className="flex space-x-3">
-                    <motion.button
-                      className="flex-1 bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 flex items-center justify-center space-x-2"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span>View Details</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                    <Link to={`/projects/${project.id}`} state={{ project }} className="flex-1">
+                      <motion.div
+                        className="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 flex items-center justify-center space-x-2"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <span>View Details</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.div>
+                    </Link>
                     
                     <motion.button
                       className="px-6 py-3 border-2 border-amber-600 text-amber-600 rounded-xl font-semibold hover:bg-amber-600 hover:text-white transition-all duration-300 flex items-center space-x-2"

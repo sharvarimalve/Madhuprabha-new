@@ -8,10 +8,7 @@ import {
   Users, 
   Award, 
   Star,
-  ChevronLeft,
-  ChevronRight,
   MapPin,
-  Calendar,
   Phone,
   Mail
 } from 'lucide-react';
@@ -21,50 +18,61 @@ const Home = () => {
   const currentProjects = [
     {
       id: 1,
-      title: 'Sky Gardens Residences',
-      location: 'Bandra West, Mumbai',
-      price: '₹2.5 Cr onwards',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'Under Construction',
-      completion: '2025',
-      description: 'Luxurious 3 & 4 BHK apartments with world-class amenities and stunning city views.',
+      title: '3BHK Luxurious Prajakta Park (Abhyankar Nagar)',
+      category: 'Residential',
+      image: '/images/Prajktapark.png',
+      location: 'Abhyankar Nagar, Nagpur',
+      duration: '12 months',
+      team: '20 members',
+      description: 'Introducing \'PRAJAKTA PARK\', our 5 level 3BHK luxurious park view apartment located in the lap of nature. A peaceful location in the heart of the city where you can enjoy your mornings with blissful greenery. A Perfect Home with Modern Amenities at Abhyankar Nagar, Nagpur.',
+      status: 'In Progress'
     },
     {
       id: 2,
-      title: 'Heritage Villas',
-      location: 'Juhu, Mumbai',
-      price: '₹8.5 Cr onwards',
-      image: 'https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800',
-      status: 'Ready to Move',
-      completion: 'Completed',
-      description: 'Premium independent villas with private gardens and modern architecture.',
+      title: '3BHK Luxurious Prajakta La-Masion',
+      category: 'Residential',
+      image: '/images/secondProject.jpg',
+      location: 'Nagpur',
+      duration: '14 months',
+      team: '22 members',
+      description: 'Introducing \'PRAJAKTA La-Masion\', our 5 level 3BHK luxurious view apartment located in the lap of nature. A peaceful location in the heart of the city where you can enjoy your mornings with blissful greenery. A Perfect Home with Modern Amenities at Nagpur.',
+      status: 'In Progress'
     },
   ];
 
   const completedProjects = [
     {
       id: 1,
-      title: 'Marina Heights',
-      location: 'Worli, Mumbai',
-      units: '250 Units',
-      image: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800',
-      year: '2023',
+      title: 'Keshav Enclave nandanwan',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/09/keshav-enclave-nandanwan.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Introducing \'Keshav Enclave \', our 3 level 3BHK luxurious park view apartment located in the lap of nature. A peaceful location in the heart of the city where you can enjoy your mornings with blissful greenery. A Perfect Home with Modern Amenities at Abhyankar Nagar, Nagpur.',
+      status: 'Completed'
     },
     {
       id: 2,
-      title: 'Golden Square Mall',
-      location: 'Andheri, Mumbai',
-      units: '180 Shops',
-      image: 'https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&w=800',
-      year: '2022',
+      title: 'Prajakta cross Winds',
+      category: 'Residential',
+      image: '	https://ashishconstruction.in/wp-content/uploads/2021/08/PRAJAKTA-CROSSWIND-HINGANA-ROAD.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
     },
     {
       id: 3,
-      title: 'Sunset Residency',
-      location: 'Powai, Mumbai',
-      units: '320 Units',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-      year: '2023',
+       title: 'Prajakta Prabhakamal',
+      category: 'Residential',
+      image: 'https://ashishconstruction.in/wp-content/uploads/2021/08/IMG-20160212-WA0009.jpg',
+      location: 'Nagpur',
+      duration: '15 months',
+      team: '30 members',
+      description: 'Residential facility with advanced infrastructure and safety systems.',
+      status: 'Completed'
     },
   ];
 
@@ -138,7 +146,7 @@ const Home = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-64 object-fill group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
@@ -149,11 +157,11 @@ const Home = () => {
                       {project.status}
                     </span>
                   </div>
-                  <div className="absolute top-4 right-4">
+                  {/* <div className="absolute top-4 right-4">
                     <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
                       {project.completion}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
                 
                 <div className="p-6">
@@ -163,19 +171,18 @@ const Home = () => {
                     <span>{project.location}</span>
                   </div>
                   <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-2xl font-bold text-amber-600">{project.price}</span>
-                  </div>
                   
                   <div className="flex space-x-3">
-                    <motion.button
-                      className="flex-1 bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 flex items-center justify-center space-x-2"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span>Read More</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                    <Link to={`/projects/${project.id}`} state={{ project }} className="flex-1">
+                      <motion.div
+                        className="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white py-3 rounded-xl font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 flex items-center justify-center space-x-2"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <span>Read More</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.div>
+                    </Link>
                     
                     <motion.button
                       className="px-6 py-3 border-2 border-amber-600 text-amber-600 rounded-xl font-semibold hover:bg-amber-600 hover:text-white transition-all duration-300 flex items-center space-x-2"
@@ -237,7 +244,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -313,8 +320,10 @@ const Home = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Call Us</p>
-                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="font-semibold">Call Us</p>
+                    <a href="tel:+919822474211" className="hover:text-amber-400">
+                      +91 98224 74211
+                    </a>
                   </div>
                 </div>
                 
@@ -323,8 +332,13 @@ const Home = () => {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Email Us</p>
-                    <p className="text-gray-600">info@eliteestates.com</p>
+                    <p className="font-semibold">Email Us</p>
+                    <a
+                    href="mailto:info@madhuprabhaconstructions.in"
+                    className=" hover:text-amber-400"
+                  >
+                    info@madhuprabhaconstructions.in
+                  </a>
                   </div>
                 </div>
               </div>
@@ -357,7 +371,7 @@ const Home = () => {
       </section>
 
       {/* Completed Projects Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -387,13 +401,8 @@ const Home = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-48 object-fill group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Completed {project.year}
-                    </span>
-                  </div>
                 </div>
                 
                 <div className="p-6">
@@ -402,7 +411,7 @@ const Home = () => {
                     <MapPin className="w-4 h-4 mr-2" />
                     <span>{project.location}</span>
                   </div>
-                  <p className="text-amber-600 font-semibold">{project.units}</p>
+                 
                 </div>
               </motion.div>
             ))}
